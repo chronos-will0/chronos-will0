@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -22,6 +22,18 @@
     <div class="boot-bar"><div class="boot-bar-fill"></div></div>
   </div>
 </div>
+
+<!-- ============ ICON RAIL ============ -->
+<nav class="icon-rail" aria-label="Section quick links">
+  <span class="rail-dot y"></span>
+  <span class="rail-dot r"></span>
+  <span class="rail-dot c"></span>
+  <div class="rail-spacer"></div>
+  <a href="#work" class="rail-link" title="Work">▣</a>
+  <a href="#gallery" class="rail-link" title="Gallery">▦</a>
+  <a href="#about" class="rail-link" title="About">◈</a>
+  <a href="#contact" class="rail-link" title="Contact">✉</a>
+</nav>
 
 <!-- ============ NAV ============ -->
 <header class="topbar">
@@ -49,8 +61,20 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-radar" aria-hidden="true">
+    <svg viewBox="0 0 400 400">
+      <circle cx="200" cy="200" r="180" fill="none" stroke="#2b2c30" stroke-width="1"/>
+      <circle cx="200" cy="200" r="140" fill="none" stroke="#2b2c30" stroke-width="1"/>
+      <circle cx="200" cy="200" r="100" fill="none" stroke="#F5FF00" stroke-width="1" stroke-dasharray="6 10" opacity="0.6"/>
+      <circle cx="200" cy="200" r="60" fill="none" stroke="#2b2c30" stroke-width="1"/>
+      <line x1="200" y1="10" x2="200" y2="40" stroke="#F5FF00" stroke-width="2"/>
+      <line x1="200" y1="360" x2="200" y2="390" stroke="#2b2c30" stroke-width="2"/>
+      <line x1="10" y1="200" x2="40" y2="200" stroke="#2b2c30" stroke-width="2"/>
+      <line x1="360" y1="200" x2="390" y2="200" stroke="#2b2c30" stroke-width="2"/>
+    </svg>
+  </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">// scene: 01_intro</p>
+    <p class="hero-eyebrow"><span class="eyebrow-tag">Scene 01 / Intro</span></p>
     <h1 class="hero-title" id="hero-title">Your Name</h1>
     <p class="hero-role" id="hero-role">3D Artist &amp; Digital Sculptor</p>
     <p class="hero-tagline" id="hero-tagline">Modeling, sculpting, and bringing meshes to life.</p>
@@ -73,7 +97,7 @@
 <!-- ============ WORK / VIEWPORTS ============ -->
 <section id="work" class="section">
   <div class="section-head">
-    <p class="section-eyebrow">01</p>
+    <p class="section-eyebrow"><span class="eyebrow-tag">01 / Viewports</span></p>
     <h2 class="section-title">Viewport Gallery</h2>
     <p class="section-sub">Every piece is a live, orbitable viewport. Toggle shading per-model.</p>
   </div>
@@ -86,7 +110,7 @@
 <!-- ============ IMAGE / VIDEO GALLERY ============ -->
 <section id="gallery" class="section section-alt">
   <div class="section-head">
-    <p class="section-eyebrow">02</p>
+    <p class="section-eyebrow"><span class="eyebrow-tag">02 / Gallery</span></p>
     <h2 class="section-title">Renders &amp; Clips</h2>
     <p class="section-sub">Stills and turntables from the render queue.</p>
   </div>
@@ -104,7 +128,7 @@
 <!-- ============ ABOUT ============ -->
 <section id="about" class="section">
   <div class="section-head">
-    <p class="section-eyebrow">03</p>
+    <p class="section-eyebrow"><span class="eyebrow-tag">03 / About</span></p>
     <h2 class="section-title">About</h2>
   </div>
   <div class="about-grid">
@@ -124,7 +148,7 @@
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="section section-alt">
   <div class="contact-box">
-    <p class="section-eyebrow">04</p>
+    <p class="section-eyebrow"><span class="eyebrow-tag">04 / Contact</span></p>
     <h2 class="section-title">Let's talk</h2>
     <p class="section-sub" id="contact-sub">Open to commissions, collaborations, and full-time roles.</p>
     <a href="mailto:you@example.com" class="btn btn-primary btn-lg" id="contact-email">Send an email</a>

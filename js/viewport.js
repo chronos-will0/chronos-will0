@@ -14,9 +14,9 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
-const TOPO_COLOR = 0x8f8f8f;
-const WIRE_COLOR = 0x111111;
-const ACCENT_ORANGE = 0xff8a2b;
+const TOPO_COLOR = 0x9a9a9a;
+const WIRE_COLOR = 0x0a0a0a;
+const ACCENT_YELLOW = 0xf5ff00;
 
 const instances = [];
 
@@ -26,7 +26,7 @@ function buildDemoMesh() {
   // material and topology shading.
   const geo = new THREE.IcosahedronGeometry(1.1, 1);
   const group = new THREE.Group();
-  const mat = new THREE.MeshStandardMaterial({ color: 0xff8a2b, roughness: 0.35, metalness: 0.15 });
+  const mat = new THREE.MeshStandardMaterial({ color: 0xf5ff00, roughness: 0.35, metalness: 0.15 });
   const mesh = new THREE.Mesh(geo, mat);
   group.add(mesh);
   return group;
@@ -104,8 +104,8 @@ function createViewport(cardEl, modelCfg) {
   const loadingEl = cardEl.querySelector(".vp-loading");
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x1c1c1c);
-  scene.fog = new THREE.Fog(0x1c1c1c, 8, 22);
+  scene.background = new THREE.Color(0x0a0a0b);
+  scene.fog = new THREE.Fog(0x0a0a0b, 8, 22);
 
   const camera = new THREE.PerspectiveCamera(40, 4 / 3, 0.01, 100);
   camera.position.set(2, 1.6, 3);
@@ -123,18 +123,18 @@ function createViewport(cardEl, modelCfg) {
   controls.minDistance = 0.5;
   controls.maxDistance = 20;
 
-  // three-point lighting, Blender-viewport-ish
+  // three-point lighting, tuned to the yellow/cyan accent palette
   const key = new THREE.DirectionalLight(0xffffff, 2.2);
   key.position.set(4, 6, 4);
-  const fill = new THREE.DirectionalLight(0x4f8bd6, 0.6);
+  const fill = new THREE.DirectionalLight(0x2fe0e0, 0.55);
   fill.position.set(-5, 2, -3);
-  const rim = new THREE.DirectionalLight(0xff8a2b, 0.5);
+  const rim = new THREE.DirectionalLight(0xf5ff00, 0.5);
   rim.position.set(0, -3, -5);
-  const hemi = new THREE.HemisphereLight(0x8899aa, 0x1a1a1a, 0.6);
+  const hemi = new THREE.HemisphereLight(0x8899aa, 0x0a0a0a, 0.6);
   scene.add(key, fill, rim, hemi);
 
-  // subtle ground grid, echoes the Blender floor grid
-  const grid = new THREE.GridHelper(20, 40, 0x333333, 0x272727);
+  // subtle ground grid
+  const grid = new THREE.GridHelper(20, 40, 0x2b2c30, 0x1a1b1e);
   grid.position.y = -1.001;
   scene.add(grid);
 
